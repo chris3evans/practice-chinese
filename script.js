@@ -1,3 +1,6 @@
+///////////////////////// DOM SELECTORS
+const englishSentance = $(".initial--sentance");
+
 ///////////////////////// ENGLISH AND CHINESE DATA
 
 const pronouns = [
@@ -118,4 +121,15 @@ const buildSentance = function (first, second, third, fourth) {
   const sentance = `${first[0]} ${second} ${third}${fourth}`;
   return sentance;
 };
-console.log(buildSentance(firstPart, secondPart, thirdPart, fourthPart));
+const engSentanceResult = buildSentance(
+  firstPart,
+  secondPart,
+  thirdPart,
+  fourthPart
+);
+
+///////// Render this built English sentance on the UI
+const renderEnglishSentance = function (randomEnglishSentance) {
+  englishSentance.text(randomEnglishSentance);
+};
+renderEnglishSentance(engSentanceResult);
