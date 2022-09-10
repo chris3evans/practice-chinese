@@ -32,19 +32,19 @@ const objects = [
 ];
 
 const verbs = [
-  ["to want", "yiw"],
-  ["to want (informal)", "oi"],
-  ["to eat", "sic"],
-  ["to drink", "yum"],
-  ["to help", "bong"],
-  ["to go", "hoiii"],
-  ["to return", "faan"],
-  ["to cook", "jee"],
-  ["to dry", "ma"],
-  ["to watch", "tay"],
-  ["to see", "tay"],
-  ["to listen", "teng"],
-  ["to drive", "jar"],
+  ["want", "yiw"],
+  ["want (informal)", "oi"],
+  ["eat", "sic"],
+  ["drink", "yum"],
+  ["help", "bong"],
+  ["go", "hoiii"],
+  ["return", "faan"],
+  ["cook", "jee"],
+  ["dry", "ma"],
+  ["watch", "tay"],
+  ["see", "tay"],
+  ["listen", "teng"],
+  ["drive", "jar"],
 ];
 
 const questions = [
@@ -80,11 +80,22 @@ const part1 = function (questions, pronouns) {
     return [partOne, "pronoun"];
   }
 };
-
 const firstPart = part1(questions, pronouns);
 
+/////// Part 2 will be a verb
+const part2 = function (verbs) {
+  let randomVerbIndex = Math.floor(Math.random() * 12 + 1);
+
+  const partTwo = verbs[randomVerbIndex][0];
+
+  return partTwo;
+};
+const secondPart = part2(verbs);
+
+/////// Part 3 will be an object
+
 const buildSentance = function (first, second, third, fourth) {
-  const sentance = `${first[0]} : ${first[1]}`;
+  const sentance = `${first[0]} ${second}`;
   return sentance;
 };
-console.log(buildSentance(firstPart));
+console.log(buildSentance(firstPart, secondPart));
