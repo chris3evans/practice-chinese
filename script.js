@@ -53,3 +53,38 @@ const questions = [
   ["when", "gee-see"],
   ["where", "bin-dall"],
 ];
+
+////////////// RANDOMLY (ENGLISH) GENERATED SENTANCE
+/////// Part 1 will be either a question or pronoun
+const part1 = function (questions, pronouns) {
+  let randomType = Math.round(Math.random());
+
+  if (randomType === 0) {
+    // Index of questions array element to be chosen
+    let randomQuestionIndex = Math.floor(Math.random() * 3 + 1);
+
+    const partOne =
+      questions[randomQuestionIndex][0][0].toUpperCase() +
+      questions[randomQuestionIndex][0].slice(1);
+
+    // Returns the first part of the sentance along with it's type
+    return [partOne, "question"];
+  } else {
+    // Index of questions array element to be chosen
+    let randomPronounsIndex = Math.floor(Math.random() * 6 + 1);
+
+    const partOne =
+      pronouns[randomPronounsIndex][0][0].toUpperCase() +
+      pronouns[randomPronounsIndex][0].slice(1);
+
+    return [partOne, "pronoun"];
+  }
+};
+
+const firstPart = part1(questions, pronouns);
+
+const buildSentance = function (first, second, third, fourth) {
+  const sentance = `${first[0]} : ${first[1]}`;
+  return sentance;
+};
+console.log(buildSentance(firstPart));
