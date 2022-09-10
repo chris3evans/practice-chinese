@@ -100,8 +100,22 @@ const part3 = function (objects) {
 };
 const thirdPart = part3(objects);
 
+/////// Part 4 will be either a question mark or nothing
+const part4 = function (sentanceStarter) {
+  const type = sentanceStarter[1];
+
+  if (type === "question") {
+    const partFour = "?";
+    return partFour;
+  } else {
+    return "";
+  }
+};
+const fourthPart = part4(firstPart);
+
+//////// Puts all the pieces together
 const buildSentance = function (first, second, third, fourth) {
-  const sentance = `${first[0]} ${second} ${third}`;
+  const sentance = `${first[0]} ${second} ${third}${fourth}`;
   return sentance;
 };
-console.log(buildSentance(firstPart, secondPart, thirdPart));
+console.log(buildSentance(firstPart, secondPart, thirdPart, fourthPart));
