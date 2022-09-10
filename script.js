@@ -93,9 +93,15 @@ const part2 = function (verbs) {
 const secondPart = part2(verbs);
 
 /////// Part 3 will be an object
+const part3 = function (objects) {
+  let randomObjectIndex = Math.floor(Math.random() * 17 + 1);
+  const partThree = objects[randomObjectIndex][0];
+  return partThree;
+};
+const thirdPart = part3(objects);
 
 const buildSentance = function (first, second, third, fourth) {
-  const sentance = `${first[0]} ${second}`;
+  const sentance = `${first[0]} ${second} ${third}`;
   return sentance;
 };
-console.log(buildSentance(firstPart, secondPart));
+console.log(buildSentance(firstPart, secondPart, thirdPart));
